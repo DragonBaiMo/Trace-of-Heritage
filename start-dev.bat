@@ -56,9 +56,9 @@ echo   - 后端API: http://127.0.0.1:8000
 echo   - API文档: http://127.0.0.1:8000/docs
 echo.
 echo 测试账号:
-echo   - 管理员: admin / Admin123!
-echo   - 戏曲从业者: opera_practitioner / Practitioner123!
-echo   - 普通用户: heritage_user / Heritage123!
+echo   - 管理员: admin / Admin123
+echo   - 戏曲从业者: opera_practitioner / Practitioner123
+echo   - 普通用户: heritage_user / Heritage123
 echo.
 echo 提示: 关闭对应窗口即可停止服务
 echo.

@@ -19,7 +19,11 @@ export const useAuthStore = defineStore("auth", () => {
       localStorage.setItem("access_token", response.access_token);
       await loadProfile();
     } catch (err: unknown) {
-      error.value = err instanceof Error ? err.message : "登录失败";
+      if (typeof err === "string") {
+        error.value = err;
+      } else {
+        error.value = err instanceof Error ? err.message : "登录失败";
+      }
       throw err;
     } finally {
       loading.value = false;

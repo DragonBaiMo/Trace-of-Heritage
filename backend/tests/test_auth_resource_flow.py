@@ -22,7 +22,7 @@ def test_register_login_and_resource_flow(test_app: TestClient) -> None:
     assert body["message"] == MESSAGES["register_success"]
 
     # 默认管理员登录并升级角色
-    admin_login = test_app.post("/api/auth/login", json={"username": "admin", "password": "Admin123!"})
+    admin_login = test_app.post("/api/auth/login", json={"username": "admin", "password": "Admin123"})
     assert admin_login.status_code == 200
     admin_token = admin_login.json()["data"]["access_token"]
     admin_headers = {"Authorization": f"Bearer {admin_token}"}
@@ -98,9 +98,9 @@ def test_default_accounts_can_login(test_app: TestClient) -> None:
     """确保预置的管理员、从业者与普通用户均可登录。"""
 
     credentials = [
-        ("admin", "Admin123!"),
-        ("opera_practitioner", "Practitioner123!"),
-        ("heritage_user", "Heritage123!"),
+        ("admin", "Admin123"),
+        ("opera_practitioner", "Practitioner123"),
+        ("heritage_user", "Heritage123"),
     ]
     for username, password in credentials:
         response = test_app.post("/api/auth/login", json={"username": username, "password": password})

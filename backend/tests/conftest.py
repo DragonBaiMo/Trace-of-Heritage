@@ -20,11 +20,11 @@ def test_app(tmp_path_factory: pytest.TempPathFactory) -> Iterator[TestClient]:
     db_path = data_dir / "test.db"
     os.environ["SQLITE_PATH"] = str(db_path)
     os.environ["DEFAULT_ADMIN_USERNAME"] = "admin"
-    os.environ["DEFAULT_ADMIN_PASSWORD"] = "Admin123!"
+    os.environ["DEFAULT_ADMIN_PASSWORD"] = "Admin123"
     os.environ["DEFAULT_PRACTITIONER_USERNAME"] = "opera_practitioner"
-    os.environ["DEFAULT_PRACTITIONER_PASSWORD"] = "Practitioner123!"
+    os.environ["DEFAULT_PRACTITIONER_PASSWORD"] = "Practitioner123"
     os.environ["DEFAULT_USER_USERNAME"] = "heritage_user"
-    os.environ["DEFAULT_USER_PASSWORD"] = "Heritage123!"
+    os.environ["DEFAULT_USER_PASSWORD"] = "Heritage123"
 
     from importlib import reload
 

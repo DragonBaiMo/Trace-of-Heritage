@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const apiBase = import.meta.env.VITE_API_BASE ?? "http://localhost:8000/api";
+// 默认对齐后端本地监听地址，避免 localhost/127.0.0.1 混用引发额外排障成本
+const apiBase = import.meta.env.VITE_API_BASE ?? "http://127.0.0.1:8000/api";
 
 export const httpClient = axios.create({
   baseURL: apiBase,
@@ -22,8 +23,18 @@ httpClient.interceptors.response.use(
     if (error.response?.status === 401) {
       localStorage.removeItem("access_token");
     }
+
+    const detail = error.response?.data?.detail;
+    if (typeof detail === "string" && detail.trim()) {
+      return Promise.reject(detail);
+    }
+
+    if (typeof error.response?.status === "number") {
+      return Promise.reject(`请求失败（HTTP ${error.response.status}）`);
+    }
+
     return Promise.reject(
-      error.response?.data?.detail ?? error.message ?? "请求失败"
+      error.message ?? "请求失败"
     );
   }
 );

@@ -38,7 +38,7 @@ uvicorn app.main:app --reload
 - `AI_BASE_URL`：大模型接口地址，默认 SiliconFlow 示例
 - `AI_MODEL`：模型名称，默认 `Qwen/Qwen3-Omni-30B-A3B-Instruct`
 - `AI_API_KEY`：大模型密钥（不填则使用占位生成，不外呼接口）
-- 默认账号：`admin/Admin123!`、`opera_practitioner/Practitioner123!`、`heritage_user/Heritage123!`（仅用于开发，请修改）
+- 默认账号：`admin/Admin123`、`opera_practitioner/Practitioner123`、`heritage_user/Heritage123`（仅用于开发，请修改）
 
 ### 关键后端接口
 - 资源：`POST /api/resources` 创建（含水印）；`GET /api/resources/{id}/trails` 轨迹；`GET /api/recommendations` 推荐

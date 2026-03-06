@@ -4,7 +4,7 @@ from typing import Iterable, Optional
 from sqlalchemy import func
 from sqlalchemy.orm import Session
 
-from app.core.security import get_password_hash, verify_password
+from app.core.security import get_password_hash, needs_password_rehash, verify_password
 from app.models.user import User
 from app.schemas.user import PasswordChange, UserCreate, UserSelfUpdate, UserUpdate
 from app.utils.exceptions import BusinessException
@@ -44,6 +44,11 @@ class UserService:
             return None
         if not verify_password(password, user.password_hash):
             return None
+        if needs_password_rehash(user.password_hash):
+            user.password_hash = get_password_hash(password)
+            self.db.add(user)
+            self.db.commit()
+            self.db.refresh(user)
         return user
 
     def list_users(self) -> Iterable[User]:

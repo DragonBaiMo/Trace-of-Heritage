@@ -15,7 +15,7 @@ class Settings(BaseSettings):
     access_token_expire_minutes: int = Field(60 * 24, description="访问令牌有效时间，分钟")
     sqlite_path: str = Field("data/app.db", description="SQLite 数据库文件路径")
     default_admin_username: str = Field("admin", description="默认管理员账号")
-    default_admin_password: str = Field("Admin123!", description="默认管理员密码")
+    default_admin_password: str = Field("Admin123", description="默认管理员密码")
     # 兼容历史环境变量：若设置了 DEFAULT_ADMIN_EMAIL 且未显式提供用户名，则以该值作为用户名
     default_admin_email: str | None = Field(None, description="兼容：默认管理员邮箱（等同于用户名）")
     # 可选：默认从业者与默认普通用户（首次启动时若不存在则创建）
@@ -24,7 +24,7 @@ class Settings(BaseSettings):
         description="默认从业者账号（用于开发/演示环境）",
     )
     default_practitioner_password: str | None = Field(
-        "Practitioner123!",
+        "Practitioner123",
         description="默认从业者密码（用于开发/演示环境）",
     )
     default_user_username: str | None = Field(
@@ -32,7 +32,7 @@ class Settings(BaseSettings):
         description="默认普通用户账号（用于开发/演示环境）",
     )
     default_user_password: str | None = Field(
-        "Heritage123!",
+        "Heritage123",
         description="默认普通用户密码（用于开发/演示环境）",
     )
     media_root: str = Field("data/uploads", description="上传文件根目录，支持相对路径")
