@@ -1,0 +1,73 @@
+:root{
+  /* 国风配色 */
+  --paper:#f6f1e7;      /* 宣纸底色 */
+  --ink:#4a3b2a;        /* 墨色文字 */
+  --jade:#7ea17e;       /* 玉石青主色 */
+  --jade-600:#6a8f6a;   /* 主色 hover */
+  --muted:#8b7e6a;      /* 次级文字（茶褐） */
+  --success:#4aa86b;    /* 成功 */
+  --danger:#e15b4a;     /* 危险 */
+  --warning:#d8a247;    /* 警告 */
+  --radius:14px;
+  --shadow:0 8px 24px rgba(0,0,0,.06);
+  --shadow-strong:0 12px 36px rgba(0,0,0,.10);
+}
+
+/* App background：宣纸质感（柔和渐变 + 细点纹理） */
+html,body,#app{height:100%;}
+body{
+  color:var(--ink);
+  font-family: ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji";
+  background:
+    radial-gradient(1200px 600px at 20% 0%, rgba(214,198,170,.45), transparent 60%),
+    radial-gradient(1000px 500px at 80% 20%, rgba(217,198,168,.35), transparent 60%),
+    linear-gradient(180deg, #fbf7ef, #f3ecdf);
+}
+/* 轻微纸纹理叠加 */
+body::before{
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:-1;
+  background-image:
+    radial-gradient(rgba(0,0,0,.04) 1px, transparent 1px),
+    radial-gradient(rgba(0,0,0,.025) .5px, transparent .5px);
+  background-size:18px 18px, 8px 8px;
+  mix-blend-mode:multiply;
+}
+
+/* Common containers */
+.page{padding:16px 20px;}
+.card,.panel{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 20px;border:1px solid rgba(0,0,0,.04)}
+
+/* Buttons */
+button{cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:10px;border:1px solid rgba(0,0,0,.08);background:#fff;color:var(--ink);transition:all .15s ease-in-out}
+.btn:hover{box-shadow:var(--shadow)}
+.btn.primary:hover{background:var(--jade-600);box-shadow:var(--shadow-strong)}
+.btn.ghost{background:transparent;border-color:rgba(0,0,0,.12);color:var(--ink)}
+.btn.danger{background:var(--danger);border-color:transparent;color:#fff}
+.btn.success{background:var(--success);border-color:transparent;color:#fff}
+.btn.sm{padding:6px 10px;border-radius:8px;font-size:12px}
+
+/* Inputs */
+input,select,textarea{padding:10px 12px;border:1px solid #d8d3c7;border-radius:10px;background:#fff;transition:all .15s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--jade);box-shadow:0 0 0 3px rgba(126,161,126,.25)}
+label{font-size:12px;color:var(--muted)}
+.form{display:flex;flex-direction:column;gap:8px}
+
+/* Table */
+.table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border-radius:12px}
+.table th,.table td{border-bottom:1px solid #e2e8f0;padding:12px 10px;text-align:left}
+.table thead th{background:#f3efe6;font-weight:600;color:#5b5232}
+.table tbody tr:hover{background:#f8fafc}
+.table .empty{color:var(--muted);text-align:center}
+
+/* Pager */
+.pager{display:flex;gap:12px;align-items:center;justify-content:center;padding-top:12px}
+
+/* Dialog */
+.dialog-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);display:flex;justify-content:center;align-items:center}
+.dialog{width:560px;background:#fff;border-radius:var(--radius);padding:16px 20px;box-shadow:var(--shadow-strong)}
+.dialog .ops{display:flex;gap:8px;justify-content:flex-end;margin-top:12px}
+
+/* Status colors */
+.ok{color:var(--success)}
+.bad{color:var(--danger)}

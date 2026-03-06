@@ -1,0 +1,60 @@
+"""统一的中文提示语。"""
+
+MESSAGES: dict[str, str] = {
+    "register_success": "注册成功",
+    "login_success": "登录成功",
+    "credential_error": "账号或密码错误",
+    "inactive_account": "账号已被停用",
+    "resource_created": "资源提交成功，等待审核",
+    "resource_list": "资源列表获取成功",
+    "resource_detail": "资源详情获取成功",
+    "resource_not_found": "资源不存在",
+    "resource_updated": "资源信息更新成功",
+    "resource_reviewed": "资源审核完成",
+    "resource_summary": "资源概览获取成功",
+    "resource_invalid_state": "当前状态不允许执行该操作",
+    "review_note_required": "驳回时需填写审核意见",
+    "permission_denied": "没有权限执行该操作",
+    "user_list": "用户列表获取成功",
+    "user_updated": "用户信息更新成功",
+    "profile_success": "获取当前用户信息成功",
+    "audit_list": "审计日志获取成功",
+    "post_created": "帖子提交成功",
+    "post_list": "帖子列表获取成功",
+    "post_updated": "帖子更新成功",
+    "comment_created": "评论提交成功，等待审核",
+    "reaction_success": "互动成功",
+    "reaction_duplicate": "请勿重复操作",
+    "activity_created": "活动提交成功",
+    "activity_list": "活动列表获取成功",
+    "activity_reviewed": "活动审核完成",
+    "activity_not_found": "活动不存在",
+    "activity_closed": "活动已截止或名额已满",
+    "enroll_success": "报名成功",
+    "enroll_not_found": "报名记录不存在",
+    "checkin_success": "签到成功",
+    "stats_loaded": "统计数据获取成功",
+    # 从业者认证
+    "pract_apply_success": "认证申请提交成功",
+    "pract_list": "认证申请列表获取成功",
+    "pract_reviewed": "认证审核完成",
+    "pract_already_reviewed": "该申请已审核，请勿重复操作",
+    # 资料编辑
+    "profile_updated": "个人资料更新成功",
+    "password_incorrect": "原密码不正确",
+    # AI
+    "ai_generated": "AI 生成完成",
+    # 推荐
+    "recommendation_loaded": "个性化推荐已返回",
+    # 导出
+    "export_ready": "导出文件已生成",
+    # 订单
+    "order_created": "订单创建成功",
+    "order_shipped": "订单已发货",
+    "order_confirmed": "订单已确认收货",
+    # 资源轨迹
+    "resource_trail_list": "轨迹数据获取成功",
+    # 问答
+    "quiz_loaded": "题目获取成功",
+    "quiz_answered": "答题完成",
+}
