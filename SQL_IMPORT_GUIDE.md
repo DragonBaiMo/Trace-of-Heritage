@@ -531,11 +531,11 @@ FROM pg_database WHERE datname = current_database();
 
 ```batch
 @echo off
-REM 遗迹之光数据库初始化脚本
+REM 寻戏之旅——经典戏曲文化分享互动管理系统的设计与实现数据库初始化脚本
 
 echo.
 echo ===================================
-echo 遗迹之光数据库初始化脚本
+echo 寻戏之旅——经典戏曲文化分享互动管理系统的设计与实现数据库初始化脚本
 echo ===================================
 echo.
 
@@ -582,10 +582,10 @@ pause
 创建 `init-database.ps1`：
 
 ```powershell
-# 遗迹之光数据库初始化脚本（PowerShell版本）
+# 寻戏之旅——经典戏曲文化分享互动管理系统的设计与实现数据库初始化脚本（PowerShell版本）
 
 Write-Host "===================================" -ForegroundColor Cyan
-Write-Host "遗迹之光数据库初始化脚本" -ForegroundColor Cyan
+Write-Host "寻戏之旅——经典戏曲文化分享互动管理系统的设计与实现数据库初始化脚本" -ForegroundColor Cyan
 Write-Host "===================================" -ForegroundColor Cyan
 Write-Host ""
 
@@ -641,4 +641,4 @@ init-database.bat
 
 ---
 
-*此指南帮助您快速初始化和管理《遗迹之光》项目的数据库。*
+*此指南帮助您快速初始化和管理《寻戏之旅——经典戏曲文化分享互动管理系统的设计与实现》项目的数据库。*

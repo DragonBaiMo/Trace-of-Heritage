@@ -1,4 +1,4 @@
-# 遗迹之光（Trace-of-Heritage）SQL文件完整清单
+# 寻戏之旅——经典戏曲文化分享互动管理系统的设计与实现（Trace-of-Heritage）SQL文件完整清单
 
 ## 📁 文件列表
 
@@ -421,7 +421,7 @@ psql -U postgres -d heritage_db -f database_postgresql.sql
 
 ## 📄 文件信息
 
-**项目**：遗迹之光（Trace-of-Heritage）
+**项目**：寻戏之旅——经典戏曲文化分享互动管理系统的设计与实现（Trace-of-Heritage）
 **版本**：0.2.0
 **创建日期**：2025-11-30
 **数据库版本支持**：
@@ -446,4 +446,4 @@ psql -U postgres -d heritage_db -f database_postgresql.sql
 
 ---
 
-*本清单为《遗迹之光》项目的SQL文件完整参考，如有更新需求请参考最新版本。*
+*本清单为《寻戏之旅——经典戏曲文化分享互动管理系统的设计与实现》项目的SQL文件完整参考，如有更新需求请参考最新版本。*

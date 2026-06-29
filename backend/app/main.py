@@ -7,6 +7,7 @@ from app.api.routes import (
     ai,
     audits,
     auth,
+    cultural,
     export,
     health,
     posts,
@@ -48,16 +49,19 @@ app.add_middleware(
 
 
 @app.on_event("startup")
-def ensure_admin() -> None:
-    """应用启动时确保存在至少一名管理员。"""
+def on_startup() -> None:
+    """应用启动时：创建管理员 → 创建默认账号 → 自动导入演示种子数据。"""
 
     from app.db.session import SessionLocal
+    from app.services.seed_service import run_seed
 
     with SessionLocal() as session:
         svc = UserService(session)
         svc.ensure_admin_exists()
         # 按 .env 配置创建默认从业者与默认普通用户（若不存在）
         svc.ensure_default_accounts()
+        # 自动导入演示种子数据（幂等，表有数据则跳过）
+        run_seed(session)
 
 
 app.include_router(health.router, prefix="/api")
@@ -75,3 +79,4 @@ app.include_router(recommendations.router, prefix="/api")
 app.include_router(ai.router, prefix="/api")
 app.include_router(quiz.router, prefix="/api")
 app.include_router(export.router, prefix="/api")
+app.include_router(cultural.router, prefix="/api")

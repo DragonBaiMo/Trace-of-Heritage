@@ -9,6 +9,7 @@ from app.models.resource import Resource, ResourceGeoTrail
 from app.models.user import User
 from app.models.practitioner import PractitionerApplication
 from app.models.wiki import WikiEntry
+from app.models.cultural import VideoRecommendation, WeeklyDigest
 
 __all__ = [
     "User",
@@ -28,4 +29,6 @@ __all__ = [
     "QuizQuestion",
     "QuizUserAnswer",
     "WikiEntry",
+    "VideoRecommendation",
+    "WeeklyDigest",
 ]

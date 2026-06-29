@@ -1,7 +1,7 @@
 <template>
   <div class="login-wrapper">
     <form class="login-card" @submit.prevent="handleSubmit">
-      <h1>遗迹之光 · 登录</h1>
+      <h1>寻戏之旅——经典戏曲文化分享互动管理系统的设计与实现 · 登录</h1>
       <p class="hint">使用用户名与密码进入管理空间。</p>
       <label>
         用户名

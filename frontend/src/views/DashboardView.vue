@@ -2,7 +2,7 @@
   <div class="dashboard">
     <section class="hero">
       <div>
-        <h2>遗迹之光 · 运维面板</h2>
+        <h2>寻戏之旅——经典戏曲文化分享互动管理系统的设计与实现 · 运维面板</h2>
         <p>快速浏览资源审核进度、互动热度与活动执行情况。</p>
       </div>
       <RouterLink to="/resources/create" class="cta">立即提交素材</RouterLink>

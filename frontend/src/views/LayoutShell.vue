@@ -2,7 +2,7 @@
   <div class="layout">
     <aside class="sidebar">
       <div class="brand">
-        <h1 class="logo">遗迹之光</h1>
+        <h1 class="logo">寻戏之旅——经典戏曲文化分享互动管理系统的设计与实现</h1>
         <p class="logo-sub">文化遗产协作工作台</p>
       </div>
       <nav>
@@ -74,6 +74,7 @@ const navItems = computed(() => {
     items.push(
       { to: "/", label: "数据总览" },
       { to: "/resources", label: "资源库" },
+      { to: "/culture", label: "文化分享" },
       { to: "/admin/analytics", label: "热门分析" },
       { to: "/admin/practitioners", label: "从业者管理" },
       { to: "/admin/products", label: "商品管理" },
@@ -87,12 +88,14 @@ const navItems = computed(() => {
       { to: "/practitioner/verify", label: "从业者认证" },
       { to: "/resources/create", label: "提交资源" },
       { to: "/topics/hot", label: "热门话题" },
+      { to: "/culture", label: "文化分享" },
       { to: "/activities", label: "活动中心" },
     );
   } else if (auth.user?.role === "user") {
     items.push(
       { to: "/topics/hot", label: "热门话题" },
       { to: "/wiki", label: "戏曲百科库" },
+      { to: "/culture", label: "文化分享" },
       { to: "/interaction", label: "互动广场" },
       { to: "/activities/explore", label: "活动参与" },
       { to: "/activities/me", label: "我的报名" },
@@ -138,6 +141,8 @@ const pageTitle = computed(() => {
       return "热门话题";
     case "wiki":
       return "戏曲百科库";
+    case "culture-share":
+      return "文化分享";
     case "shop":
       return "积分商城";
     case "login":
@@ -167,7 +172,7 @@ const pageTitle = computed(() => {
     case "my-resources":
       return "我的资源";
     default:
-      return "遗迹之光";
+      return "寻戏之旅——经典戏曲文化分享互动管理系统的设计与实现";
   }
 });
 
@@ -191,6 +196,8 @@ const subtitle = computed(() => {
       return "参与热门话题，发布与互动";
     case "wiki":
       return "检索戏曲百科词条与分类";
+    case "culture-share":
+      return "精选视频推荐与每周荐读";
     case "shop":
       return "使用积分兑换商品";
     case "login":
